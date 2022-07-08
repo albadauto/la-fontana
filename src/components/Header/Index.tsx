@@ -6,7 +6,7 @@ export default function Header() {
     return (
         <Navbar expand="lg">
             <Container >
-                <Navbar.Brand href="#">
+                <Navbar.Brand href="/">
                     <Image src={logo} style={{width: 150}}/>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
@@ -17,8 +17,8 @@ export default function Header() {
                         navbarScroll
                     >
                         
-                        <Nav.Link href="#action1">Home</Nav.Link>
-                        <Nav.Link href="#" >
+                        <Nav.Link href="/">Home</Nav.Link>
+                        <Nav.Link href="/Menu" >
                             Cardápio
                         </Nav.Link>
                         <Nav.Link href="#action2">Novidades</Nav.Link>
