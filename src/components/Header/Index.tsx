@@ -4,7 +4,7 @@ import logo from "../../Assets/img/logo-r.png";
 import "./style.css";
 export default function Header() {
     return (
-        <Navbar bg="danger" expand="lg">
+        <Navbar expand="lg">
             <Container >
                 <Navbar.Brand href="#">
                     <Image src={logo} style={{width: 150}}/>
@@ -18,16 +18,16 @@ export default function Header() {
                     >
                         
                         <Nav.Link href="#action1">Home</Nav.Link>
-                        <Nav.Link href="#" disabled>
+                        <Nav.Link href="#" >
                             Cardápio
                         </Nav.Link>
                         <Nav.Link href="#action2">Novidades</Nav.Link>
                         <NavDropdown title="Minha conta" id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
+                            <NavDropdown.Item href="#action3">Meus pedidos</NavDropdown.Item>
+                            <NavDropdown.Item href="#action4">Perfil</NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action5">
-                                Something else here
+                                Sair
                             </NavDropdown.Item>
                         </NavDropdown>
                         
