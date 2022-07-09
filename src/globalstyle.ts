@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
         background-color: red;
         border-color: white;
         font-size: 20px;
+        border-radius: 10px;
     }
 
     .title{

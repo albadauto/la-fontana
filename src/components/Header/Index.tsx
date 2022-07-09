@@ -22,14 +22,16 @@ export default function Header() {
                             Cardápio
                         </Nav.Link>
                         <Nav.Link href="#action2">Novidades</Nav.Link>
-                        <NavDropdown title="Minha conta" id="navbarScrollingDropdown">
+                        <Nav.Link href="/Login">Login</Nav.Link>
+
+                        {/* <NavDropdown title="Minha conta" id="navbarScrollingDropdown">
                             <NavDropdown.Item href="#action3">Meus pedidos</NavDropdown.Item>
                             <NavDropdown.Item href="#action4">Perfil</NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action5">
                                 Sair
                             </NavDropdown.Item>
-                        </NavDropdown>
+                        </NavDropdown> */}
                         
                     </Nav>
                     <Form className="d-flex">

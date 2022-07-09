@@ -1,12 +1,16 @@
 import React from 'react'
 import { GlobalStyle } from './globalstyle'
+import HeaderProvider from './providers/HeaderProvider'
 import Routes from './routes'
 
 export default function App() {
   return (
     <>
-      <Routes />
-      <GlobalStyle />
+      <HeaderProvider>
+        <Routes />
+        <GlobalStyle />
+      </HeaderProvider>
+
     </>
   )
 
