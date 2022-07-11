@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter, Route, Routes as Rt } from "react-router-dom";
 import Footer from './components/Footer/Index';
 import Header from './components/Header/Index';
+import Admin from './pages/Admin/Index';
 import Home from './pages/Home/Index';
 import Login from './pages/Login/Index';
 import Menu from './pages/Menu/Index';
@@ -15,6 +16,9 @@ export default function Routes() {
                 <Route path="/Login" element={<Login />} />
             </Rt>
             <Footer />
+            <Rt>
+                <Route path="/admin" element={<Admin />} />
+            </Rt>
         </BrowserRouter>
     )
 }

@@ -1,13 +1,36 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { Button, Container, Form, FormControl, Image, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { textSpanEnd } from 'typescript';
 import logo from "../../Assets/img/logo-r.png";
+import { useHeader } from '../../providers/HeaderProvider';
 import "./style.css";
 export default function Header() {
+    const { bar, setBar }: any = useHeader();
+    function handleUnsign(){
+        sessionStorage.removeItem("token");
+        window.location.href = "/";
+    }
+    if (!sessionStorage.getItem("token")) {
+        setBar({ ...bar, template: <Nav.Link href="/Login">Login</Nav.Link> })
+    } else {
+        setBar({
+            ...bar, template:
+                <NavDropdown title="Minha conta" id="navbarScrollingDropdown">
+                    <NavDropdown.Item href="#action3">Meus pedidos</NavDropdown.Item>
+                    <NavDropdown.Item href="#action4">Perfil</NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="#action5" onClick={() => handleUnsign()}>
+                        Sair
+                    </NavDropdown.Item>
+                </NavDropdown>
+
+        })
+    }
     return (
         <Navbar expand="lg">
             <Container >
                 <Navbar.Brand href="/">
-                    <Image src={logo} style={{width: 150}}/>
+                    <Image src={logo} style={{ width: 150 }} />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
@@ -16,23 +39,14 @@ export default function Header() {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        
+
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/Menu" >
                             Cardápio
                         </Nav.Link>
                         <Nav.Link href="#action2">Novidades</Nav.Link>
-                        <Nav.Link href="/Login">Login</Nav.Link>
+                        {bar.template}
 
-                        {/* <NavDropdown title="Minha conta" id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="#action3">Meus pedidos</NavDropdown.Item>
-                            <NavDropdown.Item href="#action4">Perfil</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action5">
-                                Sair
-                            </NavDropdown.Item>
-                        </NavDropdown> */}
-                        
                     </Nav>
                     <Form className="d-flex">
                         <FormControl
