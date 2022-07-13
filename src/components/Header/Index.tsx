@@ -1,7 +1,8 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Button, Container, Form, FormControl, Image, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { textSpanEnd } from 'typescript';
 import logo from "../../Assets/img/logo-r.png";
+import { useCart } from '../../providers/CartProvider';
 import { useHeader } from '../../providers/HeaderProvider';
 import "./style.css";
 export default function Header() {
@@ -16,7 +17,7 @@ export default function Header() {
         setBar({
             ...bar, template:
                 <NavDropdown title="Minha conta" id="navbarScrollingDropdown">
-                    <NavDropdown.Item href="#action3">Meus pedidos</NavDropdown.Item>
+                    <NavDropdown.Item href="/MyOrders">Meus pedidos</NavDropdown.Item>
                     <NavDropdown.Item href="#action4">Perfil</NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="#action5" onClick={() => handleUnsign()}>
@@ -26,6 +27,7 @@ export default function Header() {
 
         })
     }
+   
     return (
         <Navbar expand="lg">
             <Container >

@@ -4,7 +4,8 @@ import { CartContext } from '../../providers/CartProvider'
 import { BotaoAdd } from './style'
 
 export default function Menu() {
-  const { finalPrice, order, handleAddCart } = useContext(CartContext)
+  const { handleAddCart } = useContext(CartContext)
+  const finalPrice = localStorage.getItem("finalPrice");
   return (
     <Container >
       <>

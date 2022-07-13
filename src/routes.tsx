@@ -6,6 +6,7 @@ import Admin from './pages/Admin/Index';
 import Home from './pages/Home/Index';
 import Login from './pages/Login/Index';
 import Menu from './pages/Menu/Index';
+import MyOrders from './pages/MyOrders/Index';
 export default function Routes() {
     return (
         <BrowserRouter>
@@ -14,6 +15,8 @@ export default function Routes() {
                 <Route path="/" element={<Home />} />
                 <Route path="/Menu" element={<Menu />} />
                 <Route path="/Login" element={<Login />} />
+                <Route path="/MyOrders" element={<MyOrders />} />
+
             </Rt>
             <Footer />
             <Rt>
